@@ -10,7 +10,7 @@ from .const import DOMAIN, DEFAULT_NAME
 
 _LOGGER = logging.getLogger(__name__)
 
-class FingerporiImage(CoordinatorEntity, ImageEntity):
+class AnimalCrackersImage(CoordinatorEntity, ImageEntity):
     def __init__(self, hass: HomeAssistant, coordinator, path: str, config_entry_id: str | None = None, name: str | None = None):
         # Initialize CoordinatorEntity so the entity receives coordinator updates
         super().__init__(coordinator)
@@ -122,7 +122,7 @@ class FingerporiImage(CoordinatorEntity, ImageEntity):
         except FileNotFoundError:
             return None
         except Exception:
-            _LOGGER.exception("Failed to read fingerpori image file")
+            _LOGGER.exception("Failed to read animalcrackers image file")
             return None
 
     @property
@@ -147,7 +147,7 @@ class FingerporiImage(CoordinatorEntity, ImageEntity):
             return {
                 "identifiers": {(DOMAIN, self._config_entry_id)},
                 "name": self._name,
-                "manufacturer": "Fingerpori",
+                "manufacturer": "Animal Crackers",
                 "model": "Daily Comic",
             }
         return None

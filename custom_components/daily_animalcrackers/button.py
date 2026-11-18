@@ -1,4 +1,4 @@
-"""Button platform for Daily Fingerpori integration."""
+"""Button platform for Daily Animal Crackers integration."""
 import logging
 from homeassistant.components.button import ButtonEntity
 from homeassistant.config_entries import ConfigEntry
@@ -17,11 +17,11 @@ async def async_setup_entry(
 ) -> None:
     """Set up the button entity from a config entry."""
     coordinator = hass.data[DOMAIN][entry.entry_id]["coordinator"]
-    async_add_entities([FingerporiUpdateButton(coordinator, entry)])
+    async_add_entities([AnimalCrackersUpdateButton(coordinator, entry)])
 
 
-class FingerporiUpdateButton(ButtonEntity):
-    """Button entity to manually update the Fingerpori comic."""
+class AnimalCrackersUpdateButton(ButtonEntity):
+    """Button entity to manually update the Animal Crackers comic."""
 
     def __init__(self, coordinator, entry: ConfigEntry):
         """Initialize the button entity."""
@@ -37,7 +37,7 @@ class FingerporiUpdateButton(ButtonEntity):
         return {
             "identifiers": {(DOMAIN, self._entry.entry_id)},
             "name": self._entry.title or DEFAULT_NAME,
-            "manufacturer": "Fingerpori",
+            "manufacturer": "Animal Crackers",
             "model": "Daily Comic",
         }
 

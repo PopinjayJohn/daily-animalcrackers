@@ -3,7 +3,7 @@ from homeassistant import config_entries
 from homeassistant.const import CONF_NAME
 from .const import DOMAIN, DEFAULT_NAME, CONF_REFRESH_INTERVAL
 
-class FingerporiConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+class AnimalCrackersConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     async def async_step_user(self, user_input=None):
         if user_input is not None:
             return self.async_create_entry(title=DEFAULT_NAME, data={}, options={
@@ -19,9 +19,9 @@ class FingerporiConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
     @staticmethod
     def async_get_options_flow(config_entry):
-        return FingerporiOptionsFlowHandler(config_entry)
+        return AnimalCrackersOptionsFlowHandler(config_entry)
 
-class FingerporiOptionsFlowHandler(config_entries.OptionsFlow):
+class AnimalCrackersOptionsFlowHandler(config_entries.OptionsFlow):
     def __init__(self, config_entry):
         self.config_entry = config_entry
 

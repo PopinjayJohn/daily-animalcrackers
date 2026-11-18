@@ -1,0 +1,12 @@
+{
+  "domain": "daily_animalcrackers",
+  "name": "Daily Animal Crackers",
+  "codeowners": ["@PopinjayJohn"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/PopinjayJohn/daily-animalcrackers",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/PopinjayJohn/daily-animalcrackers/issues",
+  "requirements": [],
+  "version": "v1.0.0"
+}
